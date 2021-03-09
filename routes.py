@@ -22,4 +22,4 @@ def search_weather():
         celsium = round((current_temp - 32) * 5 / 9, 2)
         return f'Current temperature of {city.title()} is {celsium}.'
     else:
-        return f'Error getting temperature for {city.title()}'
+        return f'Error getting temperature for {city.title()}.'
