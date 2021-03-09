@@ -19,7 +19,7 @@ def search_weather():
 
     current_temp = response.get('main', {}).get('temp')
     if current_temp:
-        celsium = round((current_temp - 32) * 5 / 9, 2)
+        celsium = round((current_temp - 32) * 5/9, 2)
         return f'Current temperature of {city.title()} is {celsium}.'
     else:
         return f'Error getting temperature for {city.title()}.'
