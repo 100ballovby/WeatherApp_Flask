@@ -5,7 +5,7 @@ from app import app
 
 @app.route('/city')
 def search_weather():
-    API_KEY = 'b325c6bf58ad542b13ea53593ef71ec8'  # ваш ключ будет храниться туть
+    API_KEY = ''  # ваш ключ будет храниться туть
     city = request.args.get('q')
 
     # make a call
