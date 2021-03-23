@@ -1,7 +1,21 @@
 import requests
-from flask import request
+from flask import request, render_template, redirect, url_for
 from app import app
 import os  # работа с операционной системой (компьютера\сервера)
+from forms import SearchForm
+
+
+@app.route('/')  # главная страница - mysite.com/
+def main_page():
+    form = SearchForm()
+    # экземпляр формы. То есть создаю форму для пользователя,
+    # когда он заходит на главную страницу моего сайта
+    if form.validate_on_submit():  # если форма отправляется
+        city = request.form['city'].lower()
+        # MiNsK .lower() -> minsk
+        return redirect(url_for('search_weather', city=city))
+        # перенаправляю пользователя на страницу с отображением погоды для выбранного гоорода
+    return render_template('index.html', form=form)
 
 
 @app.route('/city')
