@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Welcome to weather App</h1>
+
+    <form action="" method="post">
+        {{ form.hidden_tag() }} <!-- защита от CSRF-атак -->
+        <label for="city">City name</label>
+        <input type="text" name="city" id="city_name">
+        <button type="submit">Search</button>
+    </form>
+{% endblock %}
